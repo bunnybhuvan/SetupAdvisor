@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remote Work Setup Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero card">
+        <p class="eyebrow">Agentic AI System</p>
+        <h1>Remote Work Setup Advisor</h1>
+        <p>
+          Build your ideal remote setup with explainable recommendations tailored to your role,
+          budget, connectivity, and working style.
+        </p>
+      </header>
+
+      <main class="layout-grid">
+        <section class="card form-card">
+          <div class="section-head">
+            <h2>Your Context</h2>
+            <span class="pill">Step 1</span>
+          </div>
+          <form id="advisor-form">
+            <label>
+              Role
+              <select name="role" required>
+                <option value="">Choose role</option>
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Student</option>
+              </select>
+            </label>
+            <label>
+              Work Type
+              <select name="workType" required>
+                <option value="">Choose work type</option>
+                <option>Coding</option>
+                <option>Meetings</option>
+                <option>Design</option>
+                <option>Hybrid</option>
+              </select>
+            </label>
+            <label>
+              Budget
+              <select name="budget" required>
+                <option value="">Choose budget</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+            <label>
+              Internet Quality
+              <select name="internet" required>
+                <option value="">Choose internet quality</option>
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+              </select>
+            </label>
+            <label>
+              Work Hours
+              <select name="hours" required>
+                <option value="">Choose work hours</option>
+                <option>Part-time</option>
+                <option>Full-time</option>
+              </select>
+            </label>
+
+            <button type="submit" class="cta-btn">Generate Setup</button>
+          </form>
+        </section>
+
+        <section class="card output-card">
+          <div class="section-head">
+            <h2>AI Recommendations</h2>
+            <span class="pill">Step 2</span>
+          </div>
+
+          <div id="loading" class="loading hidden" aria-live="polite">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <p>Analyzing your context and generating setup...</p>
+          </div>
+
+          <div id="result" class="result hidden" aria-live="polite">
+            <article class="result-section" data-animate>
+              <h3>1. Recommended Hardware</h3>
+              <ul id="hardware-list"></ul>
+            </article>
+            <article class="result-section" data-animate>
+              <h3>2. Recommended Software</h3>
+              <ul id="software-list"></ul>
+            </article>
+            <article class="result-section" data-animate>
+              <h3>3. Workspace Setup Tips</h3>
+              <ul id="workspace-list"></ul>
+            </article>
+            <article class="result-section" data-animate>
+              <h3>4. Productivity Workflow</h3>
+              <ul id="workflow-list"></ul>
+            </article>
+            <article class="result-section" data-animate>
+              <h3>5. Explanation (Why this setup)</h3>
+              <p id="explanation"></p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
